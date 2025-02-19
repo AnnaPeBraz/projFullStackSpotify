@@ -1,31 +1,23 @@
-// import React from 'react'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-solid-svg-icons";
+// import { React } from 'react'
 
-const Itemlist = () => {
+import SingleItem from "./Singleitem";
+import { artistArray } from "../assets/database/artists";
+import { songsArray } from "../assets/database/songs";
+
+const Itemlist = ({ title, items }) => {
   return (
     <div className="item-list">
       <div className="item-list__header">
-        <h2>Artistas Populares</h2>
+        <h2>{title} Populares</h2>
         <a className="item-list__link" href="/">
           Mostrar mais
         </a>
       </div>
 
       <div className="item-list__container">
-        <div className="single-item">
-          <div className="single-item__div-image-button">
-            <div className="single-item__div-image">
-              <img className="single-item__image" src="" alt="" />
-            </div>
-          </div>
-          <p>Nome do artista</p>
-          <p>Artista</p>
-          <FontAwesomeIcon
-            className="single-item__icon"
-            icon={faCirclePlay}
-          />{" "}
-        </div>
+        {artistArray.map((currentValue, index) => (
+            <SingleItem key={`${title}-${index}`}/>
+          ))}
       </div>
     </div>
   );
