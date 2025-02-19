@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 // import { React } from 'react'
 
+import { Link } from "react-router-dom";
 import SingleItem from "./Singleitem";
 
-// eslint-disable-next-line react/prop-types
 const Itemlist = ({ title, items, itemsArray, path, idPath }) => {
   return (
     <div className="item-list">
       <div className="item-list__header">
         <h2>{title} Populares</h2>
-        <a className="item-list__link" href={path}>
+        <Link className="item-list__link" to={path}>
           Mostrar mais
-        </a>
+        </Link>
       </div>
 
       <div className="item-list__container">
